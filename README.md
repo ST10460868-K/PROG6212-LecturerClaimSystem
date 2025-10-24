@@ -29,14 +29,14 @@ Part 2 focuses on adding functionality, improving the GUI, and implementing feed
 ---
 
 ClaimSystem/
- ┣ App.xaml
- ┣ ClaimSystem
- ┣ ClaimSystem.Models
- ┃ ┣ ClaimService.cs
- ┃ ┗ FileUploadService.cs
- ┣ Tests/
- ┃ ┗ ClaimServiceTests.cs
- ┗ README.md
+ App.xaml
+  ClaimSystem
+  ClaimSystem.Models
+  ClaimService.cs
+  FileUploadService.cs
+  Tests/
+  ClaimServiceTests.cs
+  README.md
 
 
 
