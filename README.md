@@ -165,45 +165,55 @@ Navigate to: `https://localhost:5001`
 ## 📝 Git Commit Strategy (10 Commits)
 
 ```bash
-# 1. Initial setup
-git init
-git add *.csproj appsettings.json
-git commit -m "Initial commit: ASP.NET Core MVC project setup"
+commit 1
+Initial project setup with ASP.NET Core MVC, Entity Framework Core, and SQL Server database
+- Added models (Claim, ApplicationUser, ClaimStatistics)
+- Configured DbContext and connection string
+- Implemented basic folder structure and Program.cs
 
-# 2. Data models
-git add Models/
-git commit -m "Add data models: Lecturer and Claim with validation attributes"
+commit 2
+Implemented full Identity authentication with roles (Lecturer, Coordinator, Admin)
+- Added ApplicationUser inheriting from IdentityUser
+- Seeded test users and roles on startup
+- Added login/logout functionality with proper redirects
 
-# 3. Database context
-git add Data/AppDbContext.cs
-git commit -m "Configure Entity Framework DbContext with seed data"
+commit 3
+Developed fully functional Lecturer dashboard and claim submission
+- Created LecturerController with Index, Create actions
+- Built responsive Lecturer/Index.cshtml with beautiful table, badges, and styling
+- Implemented claim submission with automatic TotalAmount calculation and Submitted status
 
-# 4. FluentValidation
-git add Validators/ClaimValidator.cs
-git commit -m "Implement FluentValidation for comprehensive server-side validation"
+commit 4
+Built stunning Coordinator/Manager dashboard with real-time statistics
+- Designed modern UI with cards, gradient header, hover effects
+- Implemented statistics (Total Claims, Submitted, Approved, Total Amount, etc.)
+- Added Bulk Auto-Approve button with confirmation
 
-# 5. File upload service
-git add Services/FileUploadService.cs
-git commit -m "Add secure file upload service with validation"
+commit 5
+Implemented complete claim review and approval workflow
+- Created Review, Approve, Reject, Details, and Pending actions
+- Added automated validation checks and auto-approval under R5,000 threshold
+- Integrated reviewer comments and status transitions
 
-# 6. Lecturer controller
-git add Controllers/LecturerController.cs
-git commit -m "Create LecturerController with claim submission logic"
+commit 6
+Added role-based authorization and secured all controllers
+- Applied [Authorize(Roles = "Lecturer")] and [Authorize(Roles = "Coordinator,Admin")]
+- Ensured lecturers can only see their claims
+- Protected coordinator actions from unauthorized access
 
-# 7. Coordinator controller
-git add Controllers/CoordinatorController.cs
-git commit -m "Implement CoordinatorController with automated approval workflow"
+commit 7
+Enhanced UI/UX with professional styling and user feedback
+- Added success/error TempData messages with alerts
+- Implemented FontAwesome icons throughout
+- Added hover effects, shadows, badges, and responsive design
+- Created clean "No claims" states with icons
 
-# 8. Claim submission view
-git add Views/Lecturer/Create.cshtml
-git commit -m "Design claim submission form with jQuery auto-calculation"
-
-# 9. Coordinator dashboard
-git add Views/Coordinator/
-git commit -m "Create coordinator dashboard with statistics and review UI"
-
-# 10. Final polish
-git commit -am "Add final polish: auto-approval logic, validation messages, UI improvements"
+commit 8
+Final polish, bug fixes, and production-ready improvements
+- Fixed routing and Identity Razor pages integration
+- Improved date formatting and currency display (R0.00)
+- Added anti-forgery tokens and input validation
+- Cleaned code, added comments, and ensured 100% functionality
 ```
 
 ---
