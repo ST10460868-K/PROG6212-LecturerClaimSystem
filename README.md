@@ -8,37 +8,37 @@ A comprehensive web application for managing monthly contract lecturer claims wi
 
 ## ✨ Key Features
 
-### ✅ **Automated Verification & Approval (18-20 marks)**
+### ✅ **Automated Verification & Approval **
 - Real-time auto-calculation of claim totals
 - Automated validation with business rules
 - Auto-approval for claims under R5,000 threshold
 - Comprehensive error checking and validation
 
-### ✅ **Claim Processing Automation (18-20 marks)**
+### ✅ **Claim Processing Automation **
 - Automated status tracking (Submitted → InReview → Approved/Rejected → Processed)
 - Structured data management with Entity Framework Core
 - Bulk approval functionality
 - Streamlined administrative workflows
 
-### ✅ **Professional GUI Design (18-20 marks)**
+### ✅ **Professional GUI Design **
 - Modern Bootstrap 5 interface
 - Responsive design for all devices
 - Intuitive navigation with clear visual hierarchy
 - Professional color scheme and layout
 
-### ✅ **User-Friendly Interface (10 marks)**
+### ✅ **User-Friendly Interface **
 - Clear form labels with icons
 - Inline validation feedback
 - File upload with preview
 - Real-time calculation display
 
-### ✅ **Auto-Calculation Feature (18-20 marks)**
+### ✅ **Auto-Calculation Feature **
 - jQuery-based client-side calculation
 - Server-side validation redundancy
 - Instant total updates as user types
 - Auto-approval eligibility indicator
 
-### ✅ **Version Control Ready (10 marks)**
+### ✅ **Version Control Ready **
 - Structured for meaningful commits
 - Clear separation of concerns
 - Modular architecture
@@ -47,7 +47,7 @@ A comprehensive web application for managing monthly contract lecturer claims wi
 
 ## 🛠️ Technology Stack
 
-- **Framework**: ASP.NET Core 8.0 MVC
+- **Framework**: ASP.NET Core 9.0 MVC
 - **Database**: Entity Framework Core with SQL Server
 - **Validation**: FluentValidation
 - **Frontend**: Bootstrap 5, jQuery, Font Awesome
@@ -322,7 +322,7 @@ mkdir wwwroot/uploads
 ## 👨‍💻 Author
 
 **Student**: ST10460868  
-**Course**: Contract Monthly Claim System POE  
+**Course**: Programming 2B  
 **Framework**: ASP.NET Core MVC
 
 ---
@@ -333,6 +333,5 @@ This project is for educational purposes as part of a Portfolio of Evidence (POE
 
 ---
 
-**🎉 Ready to demonstrate for your POE assessment!**
 
 
