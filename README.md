@@ -2,8 +2,10 @@
 ## ASP.NET Core MVC - Automated Verification & Approval System
 
 ### 🎯 Project Overview
-A comprehensive web application for managing monthly contract lecturer claims with automated validation, approval workflows, and document management.
 
+The Lecturer Monthly Claim System is a full-stack ASP.NET Core MVC web application that automates the submission, validation, approval, and processing of monthly lecturer claims.
+
+The system ensures accuracy through auto-calculation, strict business rule validation, automated approval (for claims under R5,000), and a professional, user-friendly interface. It supports both lecturer submissions and coordinator/manager workflows.
 ---
 
 ## ✨ Key Features
@@ -58,34 +60,56 @@ A comprehensive web application for managing monthly contract lecturer claims wi
 ## 📦 Project Structure
 
 ```
-LecturerClaimSystem/
+ContractMonthlyClaimSystem/
 ├── Controllers/
-│   ├── LecturerController.cs      # Lecturer claim submission
-│   └── CoordinatorController.cs   # Coordinator review & approval
+│   ├── DashboardController.cs         # Handles dashboards for Lecturer, PC, PM, HR
+│   ├── AccountController.cs (optional) # Login & role management
+│   └── ReportController.cs (optional)  # Report generation
+│
 ├── Models/
-│   └── CompleteModels.cs          # Lecturer, Claim, ViewModels
+│   ├── Claim.cs                       # Main claim model
+│   ├── ApplicationUser.cs             # Identity user with roles
+│   └── RoleSetup.cs                   # Role creation and seeding
+│
 ├── Data/
-│   └── AppDbContext.cs            # Database context with seed data
-├── Services/
-│   └── FileUploadService.cs       # File upload handling
-├── Validators/
-│   └── ClaimValidator.cs          # FluentValidation rules
+│   └── ApplicationDbContext.cs        # EF Core DB context
+│
 ├── Views/
+│   ├── Account/
+│   │   └── Login.cshtml               # Login modal / login screen
+│   │
 │   ├── Lecturer/
-│   │   ├── Create.cshtml          # Claim submission form
-│   │   ├── MyClaims.cshtml        # Lecturer's claims list
-│   │   └── Details.cshtml         # Claim details
-│   └── Coordinator/
-│       ├── Index.cshtml           # Coordinator dashboard
-│       ├── Review.cshtml          # Review claim with auto-checks
-│       └── Details.cshtml         # Claim details
+│   │   ├── Dashboard.cshtml           # Lecturer dashboard view
+│   │   └── CreateClaim.cshtml         # Claim submission form (if included)
+│   │
+│   ├── ProgrammeCoordinator/
+│   │   └── Dashboard.cshtml           # PC Dashboard View
+│   │
+│   ├── ProgrammeManager/
+│   │   └── Dashboard.cshtml           # PM Dashboard View
+│   │
+│   ├── HR/
+│   │   └── Dashboard.cshtml           # HR Dashboard View
+│   │
+│   ├── Reports/
+│   │   └── ClaimReport.cshtml         # Report View (claim summary)
+│   │
+│   └── Shared/
+│       ├── _Layout.cshtml             # Main layout template
+│       └── _ValidationScriptsPartial.cshtml
+│
+├── Services/
+│   └── FileUploadService.cs (optional) # Handles document uploads
+│
 ├── wwwroot/
 │   ├── css/
 │   ├── js/
-│   └── uploads/                   # Uploaded documents
-├── Program.cs                     # Application startup
-├── appsettings.json              # Configuration
-└── README.md                     # This file
+│   └── uploads/                       # Uploaded claim documents
+│
+├── appsettings.json
+├── Program.cs
+└── README.md
+
 ```
 
 ---
@@ -93,8 +117,8 @@ LecturerClaimSystem/
 ## 🚀 Setup Instructions
 
 ### **Prerequisites**
-- Visual Studio 2022 (or VS Code with C# extension)
-- .NET 8.0 SDK or later
+- Visual Studio 2026 (or VS Code with C# extension)
+- .NET 9.0 SDK or later
 - SQL Server (LocalDB, Express, or full version)
 
 ### **Step 1: Create Project**
