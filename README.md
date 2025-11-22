@@ -8,42 +8,63 @@ The Lecturer Monthly Claim System is a full-stack ASP.NET Core MVC web applicati
 The system ensures accuracy through auto-calculation, strict business rule validation, automated approval (for claims under R5,000), and a professional, user-friendly interface. It supports both lecturer submissions and coordinator/manager workflows.
 ---
 
-## ✨ Key Features
+✨ Key Features
+✅ 1. Automated Verification & Approval
 
-### ✅ **Automated Verification & Approval **
-- Real-time auto-calculation of claim totals
-- Automated validation with business rules
-- Auto-approval for claims under R5,000 threshold
-- Comprehensive error checking and validation
+Auto-calculation of claim totals
 
-### ✅ **Claim Processing Automation **
-- Automated status tracking (Submitted → InReview → Approved/Rejected → Processed)
-- Structured data management with Entity Framework Core
-- Bulk approval functionality
-- Streamlined administrative workflows
+Real-time validation (client + server)
 
-### ✅ **Professional GUI Design **
-- Modern Bootstrap 5 interface
-- Responsive design for all devices
-- Intuitive navigation with clear visual hierarchy
-- Professional color scheme and layout
+Auto-approval for claims ≤ R5,000
 
-### ✅ **User-Friendly Interface **
-- Clear form labels with icons
-- Inline validation feedback
-- File upload with preview
-- Real-time calculation display
+Business rule validation
 
-### ✅ **Auto-Calculation Feature **
-- jQuery-based client-side calculation
-- Server-side validation redundancy
-- Instant total updates as user types
-- Auto-approval eligibility indicator
+Smart error handling
 
-### ✅ **Version Control Ready **
-- Structured for meaningful commits
-- Clear separation of concerns
-- Modular architecture
+Inline validation summary
+
+Automatic workflow movement
+
+✅ 2. Claim Processing Automation
+
+Automated claim status transitions:
+Submitted → InReview → Approved/Rejected → Processed
+
+Bulk approval for Programme Coordinators
+
+Role-specific permissions
+
+Entity Framework Core data handling
+
+Secure file uploads (PDF/DOCX/JPG/PNG)
+
+✅ 3. Professional GUI (High Marks)
+
+Gradient tech theme (purple/blue modern UI)
+
+Bootstrap 5 + Custom CSS
+
+Icons integrated (FontAwesome/Lucide style)
+
+Fully responsive
+
+Card-based dashboards
+
+Clean data tables
+
+User-friendly forms
+
+✅ 4. User-Friendly Experience
+
+Auto-calc of totals as user types
+
+Instant validation feedback
+
+Document upload previews
+
+Clear navigation per role
+
+Progress visibility in every dashboard
 
 ---
 
