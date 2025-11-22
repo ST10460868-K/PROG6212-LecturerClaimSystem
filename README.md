@@ -189,81 +189,27 @@ Navigate to: `https://localhost:5001`
 ## 📝 Git Commit Strategy (10 Commits)
 
 ```bash
-commit 1
-Initial project setup with ASP.NET Core MVC, Entity Framework Core, and SQL Server database
-- Added models (Claim, ApplicationUser, ClaimStatistics)
-- Configured DbContext and connection string
-- Implemented basic folder structure and Program.cs
-
-commit 2
-Implemented full Identity authentication with roles (Lecturer, Coordinator, Admin)
-- Added ApplicationUser inheriting from IdentityUser
-- Seeded test users and roles on startup
-- Added login/logout functionality with proper redirects
-
-commit 3
-Developed fully functional Lecturer dashboard and claim submission
-- Created LecturerController with Index, Create actions
-- Built responsive Lecturer/Index.cshtml with beautiful table, badges, and styling
-- Implemented claim submission with automatic TotalAmount calculation and Submitted status
-
-commit 4
-Built stunning Coordinator/Manager dashboard with real-time statistics
-- Designed modern UI with cards, gradient header, hover effects
-- Implemented statistics (Total Claims, Submitted, Approved, Total Amount, etc.)
-- Added Bulk Auto-Approve button with confirmation
-
-commit 5
-Implemented complete claim review and approval workflow
-- Created Review, Approve, Reject, Details, and Pending actions
-- Added automated validation checks and auto-approval under R5,000 threshold
-- Integrated reviewer comments and status transitions
-
-commit 6
-Added role-based authorization and secured all controllers
-- Applied [Authorize(Roles = "Lecturer")] and [Authorize(Roles = "Coordinator,Admin")]
-- Ensured lecturers can only see their claims
-- Protected coordinator actions from unauthorized access
-
-commit 7
-Enhanced UI/UX with professional styling and user feedback
-- Added success/error TempData messages with alerts
-- Implemented FontAwesome icons throughout
-- Added hover effects, shadows, badges, and responsive design
-- Created clean "No claims" states with icons
-
-commit 8
-Final polish, bug fixes, and production-ready improvements
-- Fixed routing and Identity Razor pages integration
-- Improved date formatting and currency display (R0.00)
-- Added anti-forgery tokens and input validation
-- Cleaned code, added comments, and ensured 100% functionality
+Commit 1 – Initial project setup
+Commit 2 – Identity roles + login
+Commit 3 – Lecturer dashboard + claim submission
+Commit 4 – PC/PM dashboards + workflow setup
+Commit 5 – Approval logic + auto-approval
+Commit 6 – Role-based authorization
+Commit 7 – Secure uploads
+Commit 8 – UI enhancements
+Commit 9 – Report generation
+Commit 10 – Final cleanup + documentation
 ```
 
 ---
 
-## 🎮 Usage Guide
-
-### **For Lecturers:**
-1. Navigate to `/Lecturer/Create`
-2. Fill in the claim form:
-   - Select period dates
-   - Enter hours worked
-   - Enter hourly rate
-   - Watch total auto-calculate
-3. Upload supporting documents (PDF, DOCX, images)
-4. Submit claim
-5. View status on `/Lecturer/MyClaims`
-
-### **For Coordinators:**
-1. Navigate to `/Coordinator/Index` (dashboard)
-2. View all claims with statistics
-3. Click "Review" on any claim
-4. System performs automated checks:
-   - If eligible (≤ R5,000): Auto-approved
-   - If not eligible: Manual review required
-5. Approve/Reject with comments
-6. Use "Bulk Auto-Approve" for batch processing
+## 🔐 User Roles
+| Role                           | Responsibility                    |
+| ------------------------------ | --------------------------------- |
+| **Lecturer**                   | Submit claims, view status        |
+| **Programme Coordinator (PC)** | Verify claims                     |
+| **Programme Manager (PM)**     | Approve/Reject                    |
+| **HR**                         | Process payment, generate reports |
 
 ---
 
