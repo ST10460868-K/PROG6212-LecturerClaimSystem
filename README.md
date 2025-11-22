@@ -8,73 +8,82 @@ The Lecturer Monthly Claim System is a full-stack ASP.NET Core MVC web applicati
 The system ensures accuracy through auto-calculation, strict business rule validation, automated approval (for claims under R5,000), and a professional, user-friendly interface. It supports both lecturer submissions and coordinator/manager workflows.
 ---
 
-✨ Key Features
-✅ 1. Automated Verification & Approval
+# ✨ Key Features
+## ✅ 1. Automated Verification & Approval
 
-Auto-calculation of claim totals
+- Auto-calculation of claim totals
 
-Real-time validation (client + server)
+- Real-time validation (client + server)
 
-Auto-approval for claims ≤ R5,000
+- Auto-approval for claims ≤ R5,000
 
-Business rule validation
+- Business rule validation
 
-Smart error handling
+- Smart error handling
 
-Inline validation summary
+- Inline validation summary
 
-Automatic workflow movement
+- Automatic workflow movement
 
-✅ 2. Claim Processing Automation
+---
 
-Automated claim status transitions:
+## ✅ 2. Claim Processing Automation
+
+- Automated claim status transitions:
 Submitted → InReview → Approved/Rejected → Processed
 
-Bulk approval for Programme Coordinators
+- Bulk approval for Programme Coordinators
 
-Role-specific permissions
+- Role-specific permissions
 
-Entity Framework Core data handling
+- Entity Framework Core data handling
 
-Secure file uploads (PDF/DOCX/JPG/PNG)
+- Secure file uploads (PDF/DOCX/JPG/PNG)
 
-✅ 3. Professional GUI (High Marks)
+---
 
-Gradient tech theme (purple/blue modern UI)
+## ✅ 3. Professional GUI (High Marks)
 
-Bootstrap 5 + Custom CSS
+- Gradient tech theme (purple/blue modern UI)
 
-Icons integrated (FontAwesome/Lucide style)
+- Bootstrap 5 + Custom CSS
 
-Fully responsive
+- Icons integrated (FontAwesome/Lucide style)
 
-Card-based dashboards
+- Fully responsive
 
-Clean data tables
+- Card-based dashboards
 
-User-friendly forms
+- Clean data tables
 
-✅ 4. User-Friendly Experience
+- User-friendly forms
 
-Auto-calc of totals as user types
+---
 
-Instant validation feedback
+## ✅ 4. User-Friendly Experience
 
-Document upload previews
+- Auto-calc of totals as user types
 
-Clear navigation per role
+- Instant validation feedback
 
-Progress visibility in every dashboard
+- Document upload previews
+
+- Clear navigation per role
+ 
+- Progress visibility in every dashboard
 
 ---
 
 ## 🛠️ Technology Stack
 
-- **Framework**: ASP.NET Core 9.0 MVC
-- **Database**: Entity Framework Core with SQL Server
-- **Validation**: FluentValidation
-- **Frontend**: Bootstrap 5, jQuery, Font Awesome
-- **Testing**: xUnit (optional)
+| Component      | Technology                             |
+| -------------- | -------------------------------------- |
+| Framework      | **ASP.NET Core MVC 9.0**               |
+| Database       | **Entity Framework Core + SQL Server** |
+| Authentication | **ASP.NET Identity**                   |
+| Validation     | **FluentValidation**                   |
+| Workflow       | Custom role-based approvals            |
+| Reporting      | Razor Pages views for summaries        |
 
 ---
 
@@ -151,41 +160,15 @@ cd LecturerClaimSystem
 
 ### **Step 2: Install NuGet Packages**
 ```bash
-# Entity Framework Core
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+# dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore.Tools
-
-# FluentValidation
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
 dotnet add package FluentValidation.AspNetCore
 
-# Optional: For testing
-dotnet add package xunit
-dotnet add package Microsoft.EntityFrameworkCore.InMemory
+
 ```
 
-### **Step 3: Add All Code Files**
-Copy all the provided code files into the appropriate folders:
-- `Models/CompleteModels.cs`
-- `Data/AppDbContext.cs`
-- `Services/FileUploadService.cs`
-- `Validators/ClaimValidator.cs`
-- `Controllers/LecturerController.cs`
-- `Controllers/CoordinatorController.cs`
-- `Views/Lecturer/Create.cshtml`
-- `Program.cs`
-- `appsettings.json`
-
-### **Step 4: Update Connection String** (Optional)
-Edit `appsettings.json` if needed:
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=LecturerClaimSystemDB;Trusted_Connection=true"
-  }
-}
-```
-
-### **Step 5: Create Database**
+### **Step 3: Create Database**
 ```bash
 # Option 1: Using Package Manager Console in Visual Studio
 Add-Migration InitialCreate
@@ -196,7 +179,7 @@ dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
-### **Step 6: Run the Application**
+### **Step 4: Run the Application**
 ```bash
 # Using Visual Studio: Press F5
 # Using CLI:
